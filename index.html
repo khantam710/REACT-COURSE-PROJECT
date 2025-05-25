@@ -40,22 +40,22 @@
  clevertap.privacy.push({useIP: true}); //set the flag to true, if the user agrees to share their IP data
 
   // Function to fetch user location
-  function fetchUserLocation() {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var latitude = position.coords.latitude;
-        var longitude = position.coords.longitude;
-        clevertap.getLocation(lat,lng); // Call CleverTap function with latitude and longitude
-      });
-    }
+  // function fetchUserLocation() {
+  //     navigator.geolocation.getCurrentPosition(function(position) {
+  //       var latitude = position.coords.latitude;
+  //       var longitude = position.coords.longitude;
+  //       clevertap.getLocation(lat,lng); // Call CleverTap function with latitude and longitude
+  //     });
+  //   }
   
-  (function () {
-          var wzrk = document.createElement('script');
-          wzrk.type = 'text/javascript';
-          wzrk.async = true;
-          wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+ (function () {
+         var wzrk = document.createElement('script');
+         wzrk.type = 'text/javascript';
+         wzrk.async = true;
+         wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/clevertap.min.js';        
          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(wzrk, s);
-   })();
+         s.parentNode.insertBefore(wzrk, s);
+  })();
    clevertap.notificationCallback = function(msg){
       clevertap.raiseNotificationViewed();
       clevertap.raiseNotificationClicked();
